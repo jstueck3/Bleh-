@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/frags :: head('Squirrels We Watch')}"></head>
+<body>
+<header th:replace="~{fragments/frags :: logo}"></header>
+
+<div class="content">
+<div th:each="sq : ${squirrelList}" class="squirrel-entry">
+    <h3 th:text="${sq.commonName}">COMMON NAME</h3>
+    <p class="species" th:text="${sq.species}">SPECIES</p>
+    <p class="habitat" th:text="${sq.habitat}">HABITAT</p>
+    <img th:src="@{/img/sm/__${sq.imageFileName}__}" th:alt="${sq.commonName}">
+    <p class="habitat" th:text="${sq.rating}">RATING</p>
+    <p class="habitat" th:text="${sq.behavior}">BEHAVIOR</p>
+
+    <br/>
+    <button th:onclick="|document.location='@{/report(id=${sq.id})}'|">I Saw It!</button>
+    <br/>
+    <button th:onclick="|document.location='@{/sightings(id=${sq.id})}'|">Recent Sightings</button>
+</div>
+</div>
+
+</body>
+</html>

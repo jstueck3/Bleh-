@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/frags :: head('Sighting Submitted')}"></head>
+<body>
+<header th:replace="~{fragments/frags :: logo}"></header>
+
+<h3>Thank you for reporting!</h3>
+
+<div th:insert="~{fragments/frags :: sightings}"></div>
+</body>
+</html>
